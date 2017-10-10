@@ -1,1 +1,20 @@
-<app-request-item></app-request-item>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Request</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <a href="#" class="list-group-item clearfix" *ngFor="let request of requests">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{ request.name }}</h4>
+                <p class="list-group-item-text">{{ request.description }}</p>
+            </div>
+            <span class="pull-right">
+                <img [src]="request.imagePath" alt="{{ request.name }}" class="img-responsive" style="max-height: 50px;">
+            </span>
+        </a>
+        <app-request-item></app-request-item>
+    </div>
+</div>
